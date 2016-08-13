@@ -4,8 +4,8 @@ var express = require('express'),
     io = require('socket.io')(server)
 
 
-app.get('/', function(req, res, next){
-  res.sendFile(__dirname + '/index.html')
+app.get('/', function(req, res){
+  res.sendfile(__dirname + '/index.html')
 })
 
 io.on('connection', function(socket){

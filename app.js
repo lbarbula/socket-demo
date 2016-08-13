@@ -2,10 +2,10 @@ var express = require('express'),
     app = express(),
     server = require('http').Server(app),
     io = require('socket.io')(server)
-
+app.use(express.static(__dirname + '/app'))
 
 app.get('/', function(req, res){
-  res.sendfile(__dirname + '/index.html')
+  res.render('index')
 })
 
 io.on('connection', function(socket){
